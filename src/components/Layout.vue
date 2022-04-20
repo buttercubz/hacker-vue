@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
   <main class="flex flex-col max-h-full">
-    <Navigation :tabs-size="props.tabsSize" :hide="props.hide" />
+    <Navigation :tabs-size="props.tabsSize" :hide="props.hide"  />
 
     <div class="bg-gray-100 flex mt-24" id="root">
       <slot />

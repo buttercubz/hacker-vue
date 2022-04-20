@@ -39,7 +39,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Layout :tabs-size="pages.length" :pages="pages">
+  <Layout :tabs-size="pages.length" :pages="pages" :hide="false">
     <div class="mx-auto bg-white w-3/5 mt-3 rounded-md">
       <Item v-for="item in top.page" :key="item" :item="item" />
     </div>
