@@ -36,28 +36,28 @@ onMounted(async () => {
 <template>
   <div
     v-if="isLoaded"
-    class="flex border-b-2 border-gray-100 flex-row h-20 p-4 transition duration-500 ease-in-out"
+    class="flex border-b-2 border-gray-100 flex-row h-30 lg:h-24 p-4 transition duration-500 ease-in-out items-center"
   >
     <div class="flex w-10 h-5 items-center justify-center">
       <span class="text-green-500 font-bold">
         {{ item?.score }}
       </span>
     </div>
-    <div class="flex flex-col justify-center mx-4">
+    <div class="flex flex-col justify-center mx-4 pt-1">
       <a :href="item?.url">
-        <span>{{ item?.title }}</span>
+        <span class="text-clip">{{ item?.title }}</span>
         <span class="text-gray-400"> ({{ hostName(item?.url) }}) </span>
       </a>
-      <div class="flex text-gray-500 text-sm">
-        <span class="flex items-center ml">
-          <span class="mx-2"> by </span>
+      <div class="flex text-gray-500 text-xs lg:text-sm mt-4 lg:mt-2">
+        <span class="flex items-center">
+          <span class="mx-1"> by </span>
           <span class="underline hover:text-green-500">
             <router-link :to="`/users/${item?.by}`">
               {{ item?.by }}
             </router-link>
           </span>
 
-          <span class="mx-2"> {{ timeAgo(item?.time) }} ago </span>
+          <span class="mx-1"> {{ timeAgo(item?.time) }} ago </span>
 
           <span v-if="item?.kids" class="underline hover:text-green-500">
             <a :href="`https://news.ycombinator.com/item?id=${item?.id}`">

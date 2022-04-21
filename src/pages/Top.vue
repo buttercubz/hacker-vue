@@ -26,7 +26,7 @@ onMounted(async () => {
   const response = await fetch(ApiEndPoints.topStories());
   const data = (await response.json()) as number[];
 
-  pages.value = paginateArray(data, 16);
+  pages.value = paginateArray(data, 13);
 
   if ($route.params?.page) {
     const index = Number($route.params?.page) - 1;
@@ -39,8 +39,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Layout :tabs-size="pages.length" :pages="pages" :hide="false">
-    <div class="mx-auto bg-white w-3/5 mt-3 rounded-md">
+  <Layout :tabs-size="pages.length" :hide="false">
+    <div class="mx-auto bg-white lg:w-3/5 w-11/12 mt-3 rounded-md">
       <Item v-for="item in top.page" :key="item" :item="item" />
     </div>
   </Layout>

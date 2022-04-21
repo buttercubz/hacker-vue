@@ -22,10 +22,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Layout :tabs-size="0" :pages="[]" :hide="true">
+  <Layout :tabs-size="0" :hide="true">
     <div
       v-if="isLoaded"
-      class="mx-auto bg-white w-3/5 mt-3 rounded-md flex flex-col justify-start p-10"
+      class="mx-auto bg-white w-11/12 lg:3/5 mt-3 rounded-md flex flex-col justify-start p-10"
     >
       <span class="font-bold text-lg">User: {{ user?.id }}</span>
 
@@ -33,7 +33,7 @@ onMounted(async () => {
         <span> Created: {{ timeAgo(user?.created) }} ago</span>
         <span> Karma: {{ user?.karma }} </span>
 
-        <span class="mt-4">{{ user?.about }}</span>
+        <span class="mt-4 text-clip">{{ user?.about }}</span>
 
         <div class="mt-4">
           <a
